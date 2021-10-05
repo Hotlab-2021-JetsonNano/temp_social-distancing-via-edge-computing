@@ -31,7 +31,7 @@ def _preprocess_yolo(img, input_shape, letter_box=False):
     else:
         img = cv2.resize(img, (input_shape[1], input_shape[0]))
 
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     img = img.transpose((2, 0, 1)).astype(np.float32)
     img /= 255.0
     return img
